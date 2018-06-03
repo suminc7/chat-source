@@ -1,0 +1,15 @@
+{
+  "name": "chat-redis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "docker-build": "docker build -t redis:local-slave .",
+    "docker-stop": "docker ps -a | grep \"redis\" | awk '{print $1}' | xargs docker stop",
+    "docker-run-master": "docker run --rm -p 6379:6379 --name redis-master -d redis",
+    "docker-run-slave": "docker run --rm -p 6379 --name redis-slave -d redis:local-slave",
+    "docker-delete-all": "docker stop $(docker ps -a -q) | docker rm $(docker ps -a -q) | docker rmi -f $(docker images -a -q)"
+  },
+  "author": "",
+  "license": "ISC"
+}

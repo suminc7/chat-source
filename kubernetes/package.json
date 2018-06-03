@@ -1,0 +1,19 @@
+{
+  "name": "chat-kubernetes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install-gcloud": "curl https://sdk.cloud.google.com | bash "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/suminc7/chat-kubernetes.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/suminc7/chat-kubernetes/issues"
+  },
+  "homepage": "https://github.com/suminc7/chat-kubernetes#readme"
+}

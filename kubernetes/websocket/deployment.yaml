@@ -1,0 +1,30 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: websocket
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: websocket
+    spec:
+      containers:
+      - name: websocket
+        image: gcr.io/chat-180611/chat:latest
+        env:
+        - name: REDIS_SERVICE_HOST
+          value: redis-master
+        - name: REDIS_SERVICE_PORT
+          value: "6379"
+        - name: MONGO_HOST
+          value: mongo
+        - name: MONGO_PORT
+          value: "27017"
+        resources:
+          requests:
+            cpu: 100m
+            memory: 50Mi
+        ports:
+        - containerPort: 8080
+
